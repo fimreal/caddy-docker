@@ -9,7 +9,7 @@ RUN xcaddy build \
     --with github.com/mholt/caddy-l4 \
     --with github.com/WingLim/caddy-webhook \
     --with github.com/ueffel/caddy-brotli \
-    --with github.com/vbaldinof/caddy-supervisor
+    --with github.com/baldinof/caddy-supervisor
 
 FROM caddy:alpine
 
