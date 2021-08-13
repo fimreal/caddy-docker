@@ -1,0 +1,13 @@
+FROM golang:1.16.6 as builder
+
+ENV GOPROXY=https://goproxy.cn,direct
+
+RUN go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
+
+RUN xcaddy  build \
+    --with github.com/caddy-dns/dnspod \
+    --with github.com/abiosoft/caddy-exec
+
+FROM caddy:alpiine
+
+COPY --from=builder ./caddy /usr/bin/caddy
