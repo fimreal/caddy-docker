@@ -5,7 +5,7 @@ RUN xcaddy build \
     --with github.com/abiosoft/caddy-exec \
     --with github.com/mholt/caddy-webdav \
     --with github.com/RussellLuo/caddy-ext/ratelimit \
-    --with github.com/lucaslorentz/caddy-docker-proxy \
+    --with github.com/lucaslorentz/caddy-docker-proxy/plugin/v2 \
     --with github.com/mholt/caddy-l4 \
     --with github.com/WingLim/caddy-webhook \
     --with github.com/ueffel/caddy-brotli \
