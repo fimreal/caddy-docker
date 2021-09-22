@@ -31,3 +31,9 @@ jobs:
           context: mycaddy
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/caddy:latest
+      - name: Build and push for webdav
+        uses: docker/build-push-action@v2
+        with:
+          context: caddy-webdav
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/caddy:webdav
