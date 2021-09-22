@@ -1,0 +1,22 @@
+# 填地址会自动加证书，默认 80
+:80
+
+# 将 webdav 根目录指定为容器内 /caddyroot
+root * /caddyroot
+
+@notget not method GET
+route @notget {
+    basicauth {
+        # 设置账号密码：admin 123123
+        # 生成密码 hash 命令：docker exec caddy caddy hash-password
+        admin JDJhJDE0JFIxRkowLjAudm04cHlDMUxtSTVtQk9HVXFudHZUbWQuc3A2UlNPWDdnVzlzVTFHaU1pSU95
+    }
+    webdav
+}
+
+# 开启 web 公共访问
+file_server {
+    browse
+}
+
+# 配置参考： https://github.com/mholt/caddy-webdav/blob/master/README.md
