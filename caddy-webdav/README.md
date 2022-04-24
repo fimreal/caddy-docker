@@ -17,9 +17,9 @@ docker run -d --name caddy-webdav --restart unless-stopped -p 9080:80 -v /mnt/nf
 
 #### 修改密码
 ```
-docker exec caddy-webdav caddy hash-password
+docker exec -it caddy-webdav caddy hash-password
 ```
-输入两次密码后会胜场 hash 字串，复制到配置文件中，替换默认密码。
+输入两次密码后会生成 hash 字串，复制到配置文件中，替换默认密码。
 ```
 docker cp caddy-webdav:/etc/caddy/Caddyfile ./Caddyfile
 bdocker exec -it  caddy-webdav vi /etc/caddy/Caddyfile
