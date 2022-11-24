@@ -40,6 +40,6 @@ jobs:
       - name: Build and push for webdav
         uses: docker/build-push-action@v3
         with:
-          context: caddy-webdav
+          context: caddy-webdav-dnspod
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/caddy:webdav-dnspod
